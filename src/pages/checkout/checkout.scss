@@ -1,0 +1,40 @@
+page-checkout {
+    .pay_card {
+        border: 1px solid rgba(128, 128, 128, 0.75);
+        padding: 10px;
+    }
+    ion-input.input.input-md {
+        border-bottom: 1px solid #03A9F4;
+        padding: 22px;
+    }
+    h4.checkout {
+        background: whitesmoke;
+        padding: 10px;
+        color: teal;
+        box-shadow: 1px 2px rgba(66, 66, 66, 0.42);
+    }
+    h4.fill_in {
+        background: whitesmoke;
+        margin-bottom: 0px;
+        color: rgba(82, 80, 80, 0.8);
+        text-align: center;
+    }
+    ion-label.label.label-md {
+        font-size: 16px;
+    }
+    button.secondary.disable-hover.button.button-md.button-default.button-default-md {
+        width: 96%;
+    }
+    ion-label#lbl-69,
+    #lbl-70,
+    #lbl-71,
+    #lbl-72,
+    #lbl-73,
+    #lbl-68,
+    #lbl-67,
+    #lbl-66,
+    #lbl-65 {
+        color: rgb(52, 52, 52);
+        font-weight: bold;
+    }
+}

@@ -1,0 +1,82 @@
+page-single-room {
+    .card-md {
+        margin: 10px;
+        border-radius: 2px;
+        width: calc(100% - 20px);
+        font-size: 1.4rem;
+        background: #fff;
+        -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    }
+    button.disable-hover.button.button-md.button-default.button-default-md.button-md-secondary {
+        width: 300px;
+        height: 39px;
+        margin-left: 14%;
+    }
+    ion-label.label.label-md {
+        width: 500px;
+    }
+    h4 {
+        color: white;
+        text-decoration: underline;
+    }
+    h2 {
+        color: rgba(255, 255, 255, 0.7) !important;
+        text-align: center;
+        font-size: 18px !important;
+    }
+    .calenderInputs {
+        border: 1px solid #5d5c5c;
+        padding: 20px;
+        box-shadow: 1px 3px rgb(12, 12, 12);
+    }
+    h3 {
+        color: white;
+        text-decoration: underline;
+    }
+    .details {
+        background: rgb(37, 59, 58);
+        border-radius: 20px;
+        padding: 10px;
+    }
+    .green {
+        background: rgb(30, 128, 17);
+        border-radius: 20px;
+        padding: 10px;
+    }
+    .red {
+        background: rgb(141, 11, 11);
+        border-radius: 20px;
+        padding: 10px;
+    }
+    h5 {
+        font-size: 1.6rem;
+        font-weight: 100;
+        color: white;
+    }
+    ion-item.item.item-block.item-md {
+        background: none;
+        color: white;
+    }
+    ion-card-content.card-content.card-content-md {
+        background: #222222;
+    }
+    ion-card-header.card-header.card-header-md {
+        background: #222222;
+        color: white !important;
+    }
+    .scroll-content {
+        background: #222;
+    }
+    ion-footer {
+        left: 0;
+        bottom: 0;
+        position: absolute;
+        z-index: 10;
+        display: block;
+        width: 100%;
+        background: #488aff;
+        text-align: center;
+        color: white;
+    }
+}

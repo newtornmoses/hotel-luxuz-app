@@ -1,0 +1,110 @@
+page-home {
+    ion-content {
+        background: url('./../assets/images/rooms/luxurry-king-master.jpg');
+        background-size: cover;
+    }
+    .SearchForm {
+        background: whitesmoke;
+        height: auto;
+    }
+    .title {
+        font-weight: bold;
+    }
+    ion-card.card.card-md {
+        background: rgba(8, 177, 170, 0.25);
+        color: whitesmoke;
+        border: 1px solid wheat;
+    }
+    .item-md {
+        background-color: rgba(158, 158, 158, 0);
+    }
+    .list-md .item-block .item-inner {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+        background: rgba(132, 57, 105, 0.38);
+        border: 1px solid #f4f4f4d4;
+    }
+    h4.welcome {
+        background: whitesmoke;
+        color: rgba(66, 66, 66, 0.86) !important;
+        margin-bottom: 0;
+    }
+    ion-footer {
+        left: 0;
+        bottom: 0;
+        position: absolute;
+        z-index: 10;
+        display: block;
+        width: 100%;
+        background: #488aff;
+        text-align: center;
+        color: white;
+    }
+    .item-md h3,
+    .item-md h4,
+    .item-md h5,
+    .item-md h6 {
+        margin: 2px 0;
+        font-size: 1.4rem;
+        font-weight: 900;
+        line-height: normal;
+    }
+    .card-md h3,
+    .card-md h4,
+    .card-md h5,
+    .card-md h6 {
+        margin: 2px 0;
+        font-size: 1.4rem;
+        font-weight: normal;
+        color: #dedede;
+    }
+    .toolbar-title-md {
+        color: #fff;
+        background: steelblue;
+    }
+    select#select {
+        width: 229px;
+    }
+    h4 {
+        text-align: center;
+        color: white ! important;
+    }
+    .searchTitle {
+        color: #222 !important;
+        font-size: 21px !important;
+        background: whitesmoke;
+        padding: 10px !important;
+    }
+    ion-icon.pending.icon.icon-md.ion-md-cog {
+        animation: pending 2s ease-in infinite;
+        font-size: 23px;
+        color: #FF5722;
+    }
+    @keyframes pending {
+        0% {
+            transform: rotate(360deg)
+        }
+        100% {
+            transform: rotate(0deg)
+        }
+    }
+    .alert-head {
+        background: #f53614 !important;
+        color: white;
+        text-align: center !important;
+    }
+    div#alert-msg-2 {
+        padding: 10px;
+        color: unset;
+        font-size: 16px;
+    }
+    .alert-button-group {
+        background: #cfdcf1;
+    }
+    button.disable-hover.alert-button.alert-button-md.alert-button-default.alert-button-default-md {
+        width: 52px;
+        background: teal;
+    }
+    .alert-wrapper {
+        border-radius: 20px !important;
+    }
+}

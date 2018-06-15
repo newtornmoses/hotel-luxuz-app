@@ -1,0 +1,91 @@
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>Check Out</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <h4 class="checkout">Check Out Form</h4>
+    <ion-label>Total Price: $ {{total}}</ion-label>
+    <ion-label>Room Type: {{room}}</ion-label>
+    <ion-label> Room Number: {{room_number}}</ion-label>
+    <h4 class="fill_in"> Plz fill in all the inputs</h4>
+    <div class="pay_card">
+
+
+        <ion-item>
+            <ion-label floating>Name</ion-label>
+            <ion-input type="text" placeholder="your name here" [(ngModel)]="card.name"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>Email</ion-label>
+            <ion-input type="email" placeholder="youremail@gmail.com" [(ngModel)]="card.email"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>Address</ion-label>
+            <ion-input type="text" placeholder="your address here" [(ngModel)]="card.address"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>Country</ion-label>
+            <ion-input type="text" placeholder="your country here" [(ngModel)]="card.country"></ion-input>
+        </ion-item>
+        <ion-row>
+            <ion-col>
+                <ion-item>
+                    <ion-label floating>Zip Code</ion-label>
+                    <ion-input type="number" placeholder="e.g +44" [(ngModel)]="card.zip"></ion-input>
+
+                </ion-item>
+            </ion-col>
+
+
+            <ion-col>
+                <ion-item>
+                    <ion-label floating>Phone Number</ion-label>
+                    <ion-input type="number" placeholder="e.g 05442363536" [(ngModel)]="card.phone"></ion-input>
+
+                </ion-item>
+            </ion-col>
+        </ion-row>
+
+
+        <ion-item>
+            <ion-label floating>Card Number </ion-label>
+            <ion-input type="number" placeholder="your card Number" [(ngModel)]="card.number"></ion-input>
+        </ion-item>
+
+
+        <ion-item>
+            <ion-label floating>Expiry Month</ion-label>
+            <ion-input type="number" placeholder="Card expiry month" [(ngModel)]="card.expMonth"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>Expiry Year</ion-label>
+            <ion-input type="number" placeholder="Card expiry year" [(ngModel)]="card.expYear"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>CVC</ion-label>
+            <ion-input type="number" placeholder="card cvc e.g 123" [(ngModel)]="card.cvc"></ion-input>
+        </ion-item>
+
+        <ion-card>
+            <ion-card-header>
+                <img src="./../../assets/images/paypal.jpg" alt="credit card" class="pay">
+            </ion-card-header>
+
+        </ion-card>
+
+        <button ion-button class="secondary" (click)="pay()"> Pay  Now</button>
+
+    </div>
+
+
+</ion-content>

@@ -1,0 +1,154 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>
+            <h4 class="header">VAXON HOTEL ROOM BOOKING</h4>
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    <ion-list>
+        <ion-row>
+            <ion-col>
+                <ion-card>
+                    <ion-card-header>
+                        <h2>Room Number: {{singleroom.room_number}}</h2>
+                    </ion-card-header>
+                    <ion-card-content>
+                        <img [src]=" './../assets'+singleroom.imageUrl " alt=" ">
+
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-list>
+
+    <div class="details">
+        <ion-label>
+            <h3 style="text-align: center;">Room Details</h3>
+        </ion-label>
+
+        <ion-item>
+            Class : {{singleroom.class}}
+        </ion-item>
+
+        <ion-item>
+            Active : <span [class]="singleroom.isActive? 'green': 'red'"> {{singleroom.isActive}} </span>
+        </ion-item>
+
+        <ion-item>
+            Room Size : {{singleroom.room_size}}
+        </ion-item>
+
+        <ion-item>
+            Paid : <span [class]="singleroom.paid ? 'green':'red'">{{singleroom.paid}} </span>
+        </ion-item>
+
+        <ion-item>
+            Price : $ {{singleroom.price}}
+        </ion-item>
+
+        <ion-item>
+            Room Type : {{singleroom.room_type}}
+        </ion-item>
+
+        <ion-item>
+            MaxGuests : {{singleroom.max_guests}}
+        </ion-item>
+
+        <ion-item>
+            Medical : <span [class]="singleroom.medical_service? 'green': 'red'">{{singleroom.medical_service}} </span>
+        </ion-item>
+
+        <ion-item>
+            Balcon : <span [class]="singleroom.balcony? 'green': 'red'"> {{singleroom.balcony}} </span>
+        </ion-item>
+
+        <ion-item>
+            Beds : {{singleroom.beds}}
+        </ion-item>
+
+        <ion-item>
+            Wifi : <span [class]="singleroom.wifi? 'green': 'red'">{{singleroom.wifi}}</span>
+        </ion-item>
+
+        <ion-item>
+            Swimming Pool : {{singleroom.swimmingpool}}
+        </ion-item>
+    </div>
+
+    <!-- calender -->
+
+
+    <ion-label *ngIf="!singleroom.paid">
+        <h4 style="text-align:center">
+
+            Calender</h4>
+    </ion-label>
+    <div class="calenderInputs" *ngIf="!singleroom.paid">
+        <ion-row>
+            <ion-col>
+                <ion-item>
+                    <ion-label>
+                        <ion-icon md="md-time"></ion-icon>
+                        Check In </ion-label>
+                    <ion-datetime displayFormat="MM-DD-YY" pickerFormat="MM-DD-YY" [(ngModel)]="checkin"></ion-datetime>
+                    <!-- <ion-input type="date" [(ngModel)]="checkin"></ion-input> -->
+                </ion-item>
+            </ion-col>
+
+            <ion-col>
+                <ion-item>
+                    <ion-label>
+                        <ion-icon md="md-time"></ion-icon>
+                        Check Out </ion-label>
+
+                    <ion-datetime displayFormat="MM-DD-YY" pickerFormat="MM-DD-YY" [(ngModel)]="checkout"></ion-datetime>
+
+                </ion-item>
+            </ion-col>
+            <button ion-button block (click)="confirmDates()">Confirm Dates</button>
+        </ion-row>
+
+
+        <h5>
+            Checkin Time: {{checkin}}
+        </h5>
+
+        <h5>
+            Checkout Time: {{checkout}}
+        </h5>
+
+        <h5>
+            Total Days: {{totalDays}}
+        </h5>
+
+        <h5>
+            Total Amount Charged: $ {{totalAmount}}
+        </h5>
+
+    </div>
+    <ion-item>
+
+    </ion-item>
+
+
+    <button ion-button *ngIf="!singleroom.paid" [disabled]="!totalAmount" color="secondary" (click)="check_out()">Check out </button>
+
+    <div class="roomBooked" *ngIf="singleroom.paid">
+
+        <button ion-button>
+            <ion-icon name="key"></ion-icon> &nbsp;
+          Room will be free soon
+        </button>
+
+    </div>
+
+
+</ion-content>
+
+<ion-footer>
+
+    <h6>Designed by newtorn moses</h6>
+</ion-footer>

@@ -1,0 +1,12 @@
+{
+    "name": "my-app",
+    "app_id": "893911cc",
+    "type": "ionic-angular",
+    "integrations": {
+        "cordova": {}
+    },
+    "proxies": [{
+        "path": "/ads/apisearch?publisher=9428119086867749&q=engineer&sort=&radius=&st=&jt=&start=&limit=100&fromage=&filter=&latlong=1&co=us&chnl=&userip=1.2.3.4&useragent=Mozilla/%2F4.0(Firefox)&v=2&format=json",
+        "proxyUrl": "http://api.indeed.com/ads/apisearch?publisher=9428119086867749&q=engineer&sort=&radius=&st=&jt=&start=&limit=100&fromage=&filter=&latlong=1&co=us&chnl=&userip=1.2.3.4&useragent=Mozilla/%2F4.0(Firefox)&v=2&format=json"
+    }]
+}

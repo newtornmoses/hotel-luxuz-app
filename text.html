@@ -1,0 +1,21 @@
+<html>
+<button id="btn">click me</button>
+<script>
+    var numbers = [];
+    for (var i = 1; i <= 100; i++) {
+        numbers.push(i);
+
+    }
+    numbers.forEach(elem => {
+        if (elem % 3 === 0 && elem % 5 === 0) {
+            elem = "winn"
+        } else if (elem % 3 === 0) {
+            elem = "yahooo"
+        } else if (elem % 5 === 0) {
+            elem = "gmailll"
+        }
+        console.log(elem);
+    });
+</script>
+
+</html>
