@@ -1,3 +1,25 @@
 page-login {
-
+    h4.welcome {
+        text-decoration: underline;
+        color: #656565;
+    }
+    .scroll-content {
+        background: radial-gradient(rgba(0, 0, 0, 0.14) 39%, rgb(52, 124, 251) 163%);
+    }
+    ion-item.item.item-block.item-md {
+        background: unset;
+        border-bottom: 1px solid rgb(173, 150, 150);
+    }
+    .signupForm {
+        margin-top: 30%;
+    }
+    h4.welcome {
+        background: rgba(158, 158, 158, 0.2);
+        padding: 10px;
+        color: #f4f4f4 !important;
+        border: 1px solid rgba(255, 255, 255, 0.31);
+        text-transform: uppercase;
+        font-size: 134%;
+        text-shadow: -1px -2px 4px rgba(0, 0, 0, 0.2);
+    }
 }

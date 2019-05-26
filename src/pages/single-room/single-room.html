@@ -16,7 +16,7 @@
                         <h2>Room Number: {{singleroom.room_number}}</h2>
                     </ion-card-header>
                     <ion-card-content>
-                        <img [src]=" './../assets'+singleroom.imageUrl " alt=" ">
+                        <img [src]=" 'assets'+singleroom.imageUrl" alt=" ">
 
                     </ion-card-content>
                 </ion-card>
@@ -26,7 +26,7 @@
 
     <div class="details">
         <ion-label>
-            <h3 style="text-align: center;">Room Details</h3>
+            <h4>Room Details</h4>
         </ion-label>
 
         <ion-item>
@@ -138,9 +138,9 @@
 
     <div class="roomBooked" *ngIf="singleroom.paid">
 
-        <button ion-button>
+        <button ion-button *ngIf="book_end > 0">
             <ion-icon name="key"></ion-icon> &nbsp;
-          Room will be free soon
+          Room will be free in {{book_end}} hours
         </button>
 
     </div>

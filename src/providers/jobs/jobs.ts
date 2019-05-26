@@ -14,7 +14,8 @@ import  "rxjs/add/operator/map";
 */
 @Injectable()
 export class JobsProvider {
- url ="http://localhost:3000/hotelluxuz/hotel/rooms";
+ url ="https://luxuz-hotel-api.herokuapp.com/hotelluxuz/hotel/rooms";
+ url2 ='http://localhost:3000/hotelluxuz/hotel/rooms';
 
 
 
@@ -35,7 +36,7 @@ export class JobsProvider {
   get_single(url) {
     const headers: any = new Headers();
     headers.append('Content-Type', 'application/json');
-     return this.http.get('http://localhost:3000'+url, {headers: headers});
+     return this.http.get(this.url, {headers: headers});
   }
 
 

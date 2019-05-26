@@ -1,0 +1,78 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>
+            <h4 class="header">LUXUZ HOTEL ROOM BOOKING</h4>
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <div class="signupForm" *ngIf="allow_login">
+        <h4 class="welcome">Login in to your account </h4>
+        <ion-item>
+            <ion-label floating> Email</ion-label>
+            <ion-icon name="mail"></ion-icon>
+            <ion-input type="text" name="email" [(ngModel)]="auth.email"></ion-input>
+
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating> Password</ion-label>
+            <ion-icon name="lock"></ion-icon>
+            <ion-input type="password" name="password" [(ngModel)]="auth.password"></ion-input>
+
+        </ion-item>
+        <button ion-button block (click)="login()"> Login</button>
+        <ion-item (click)="toggle_signup_login(false, true)">
+            <p>Not a member? signup here</p>
+        </ion-item>
+
+        <button ion-button color="secondary" full (click)="guest()">Guest</button>
+
+    </div>
+
+
+    <div class="signupForm" *ngIf="allow_signup">
+        <h4 class="welcome">Signup a new account </h4>
+
+        <ion-item>
+            <ion-label floating> User Name</ion-label>
+            <ion-icon name="person"></ion-icon>
+            <ion-input type="text" name="username" [(ngModel)]="auth.username"></ion-input>
+
+        </ion-item>
+        <ion-item>
+            <ion-label floating> Email</ion-label>
+            <ion-icon name="mail"></ion-icon>
+            <ion-input type="text" name="email" [(ngModel)]="auth.email"></ion-input>
+
+        </ion-item>
+
+
+        <ion-item>
+            <ion-label floating> Password</ion-label>
+
+            <ion-input type="password" name="password" [(ngModel)]="auth.password">
+
+            </ion-input>
+        </ion-item>
+
+
+
+        <button ion-button block (click)="signup()"> Login</button>
+        <ion-item (click)="toggle_signup_login(true, false)">
+            <p>Already a member? login here</p>
+        </ion-item>
+
+        <button ion-button color="secondary" full (click)="guest()">Guest</button>
+
+
+    </div>
+
+
+</ion-content>
+
+<ion-footer>
+
+
+</ion-footer>
