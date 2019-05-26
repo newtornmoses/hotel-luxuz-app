@@ -1,3 +1,4 @@
+import { Storage } from '@ionic/storage';
 import { CheckoutPage } from './../checkout/checkout';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
@@ -16,8 +17,8 @@ checkin;
 checkout ;
 totalAmount = 0;
 totalDays = 0;
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+book_end;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage) {
   }
 
   // get total days
@@ -47,11 +48,18 @@ totalDays = 0;
 
 
   ionViewDidLoad() {
+    const single = this.navParams.get('room');
+    single.forEach(elem =>{
+     this.singleroom = elem.room.details;
+   } );
 
-    this.singleroom = this.navParams.get('room').room;
+     this.book_end =moment(this.singleroom['Check_out_Time']).diff(moment(new Date()), "hours");
 
-    console.log(this.singleroom);
-
+    console.log(this.singleroom['Check_out_Time']);
+    console.log(this.book_end);
+    // get jsonweb token
+     this.storage.get('token')
+                                       .then (data => console.log(data))
   }
 
 }

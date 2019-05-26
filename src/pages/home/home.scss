@@ -65,8 +65,9 @@ page-home {
         width: 229px;
     }
     h4 {
-        text-align: center;
+        font-size: 16px;
         color: white ! important;
+        padding: 6px;
     }
     .searchTitle {
         color: #222 !important;
@@ -106,5 +107,21 @@ page-home {
     }
     .alert-wrapper {
         border-radius: 20px !important;
+    }
+    .searchbtnDiv {
+        margin-top: 20px;
+        padding: 10px;
+    }
+    .searchbtnDiv button {
+        background: #03A9F4;
+        color: #fff3f3 !important;
+        height: 42px;
+        font-size: 16px;
+    }
+    .SearchForm h4 {
+        padding: 10px;
+        background: rgba(200, 199, 204, 0.14);
+        font-size: 18px !important;
+        color: #5d5d5c !important;
     }
 }

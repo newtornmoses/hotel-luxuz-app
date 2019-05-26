@@ -13,7 +13,7 @@
     <div class="SearchForm">
         <ion-item>
             <ion-label>
-                <h4 style="text-align: center; color:rgb(17, 17, 17) !Important;">Search Rooms</h4>
+                <h4 style="text-align: center;">Search Rooms</h4>
             </ion-label>
 
 
@@ -50,13 +50,12 @@
                 </ion-item>
             </ion-col>
         </ion-row>
-        <button ion-button block (click)="findrooms()">Search</button>
-
+        <div class="searchbtnDiv">
+            <button ion-button block (click)="findrooms()">Search</button>
+        </div>
     </div>
 
     <ion-list>
-        <ion-label class="searchTitle">
-            Rooms : {{count}}</ion-label>
 
         <ion-item *ngFor="let room of rooms">
 
@@ -76,7 +75,7 @@
                         </ion-col>
 
                         <ion-col>
-                            <button ion-button color="secondary" (click)="view(room.room.url)">View Room</button>
+                            <button ion-button color="secondary" (click)="view(room.room.details._id)">View Room</button>
                         </ion-col>
 
                     </ion-row>
@@ -86,14 +85,14 @@
                     <button ion-button color="danger" (click)="booked()">Booked</button>
                 </ion-card-content>
                 <ion-card-content *ngIf="room.room.details.isActive && !room.room.details.paid">
-                    <button ion-button color="light" (click)="pending(room.room.url)">
+                    <button ion-button color="light" (click)="pending(room.room.details._id)">
                    <ion-icon name="cog" class="pending"></ion-icon> &nbsp;
                       Pending
                     </button>
 
                 </ion-card-content>
                 <ion-card-content *ngIf="room.room.details.isActive === false">
-                    <button ion-button primary (click)="book_now(room.room.url)">Book Now</button>
+                    <button ion-button primary (click)="book_now(room.room.details._id)">Book Now</button>
                 </ion-card-content>
             </ion-card>
 

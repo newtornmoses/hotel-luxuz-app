@@ -79,9 +79,11 @@ token;
 
       }
       console.log(formdata);
+     const url ="http://localhost:3000/hotelluxuz/hotel/rooms/pay/";
+     const url2="https://luxuz-hotel-api.herokuapp.com/hotelluxuz/hotel/rooms/pay/";
 
       // connect to back end server
-      this.http.post('http://localhost:3000/hotelluxuz/hotel/rooms/pay/' +this.navParams.get('id'),  formdata)
+      this.http.post(url +this.navParams.get('id'),  formdata)
                    .subscribe(result => {
                            console.log(result);
                            if(result ==="mail successively sent") {

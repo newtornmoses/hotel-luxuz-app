@@ -1,9 +1,12 @@
+import { HttpClient } from '@angular/common/http';
 import { SingleRoomPage } from './../single-room/single-room';
 import { RoomsearchPage } from './../roomsearch/roomsearch';
 import { Component } from '@angular/core';
-import { NavController, AlertController } from 'ionic-angular';
+import { NavController, AlertController, LoadingController, NavParams } from 'ionic-angular';
 import {JobsProvider} from '../../providers/jobs/jobs';
-import {DatePicker} from '@ionic-native/date-picker';
+
+import * as moment from 'moment';
+
 
 
 
@@ -18,7 +21,8 @@ max_guests =2;
 room_type='comfort';
 
   constructor(public navCtrl: NavController, public jobs: JobsProvider,
-    public alert: AlertController, public datepicker: DatePicker) {
+    public alert: AlertController,
+     public loading: LoadingController, public http: HttpClient, public navParams: NavParams) {
 
   }
 
@@ -48,13 +52,8 @@ room_type='comfort';
 
   // view room details
   view (event) {
-    this.jobs.get_single(event)
-              .subscribe(data =>
-                {
-                  console.log(data);
-                  this.navCtrl.push(SingleRoomPage, {room: data});
-                }
-              );
+    const single =  this.rooms.filter(elem => elem.room.details._id === event);
+    this.navCtrl.push(SingleRoomPage, {room:single});
   }
 
   // book_now
@@ -102,29 +101,58 @@ room_type='comfort';
   room_alert.present();
   }
 
-  // date picker
-  date_picker() {
-    this.datepicker.show({
-       date: new Date(),
-         mode: 'date',
-         androidTheme: this.datepicker.ANDROID_THEMES.THEME_HOLO_DARK,
 
-    })
-     .then(date => console.log(date))
-     .catch(err => console.log(err))
+
+  // get all rooms
+  getAllRooms(loader) {
+    this.jobs.get_rooms()
+    .subscribe(res => {
+
+      if(res) {
+        loader.dismiss();
+      }
+
+   this.rooms  = res['data'];
+   this.count = res['count']
+   console.log(this.rooms);
+   console.log(this.count);
+
+   // map rooms
+ this.rooms.filter(elem =>{
+
+    const time =moment(elem.room.details.Check_out_Time).diff(moment(new Date().toISOString()), 'hours') <=0
+                       && elem.room.details.paid === true;
+
+    return  time;
+
+   }).forEach(elem =>{
+      console.log(elem.room.details._id);
+
+      // update rooms to be inactive
+     
+     this.http.post('https://luxuz-hotel-api.herokuapp.com/hotelluxuz/hotel/rooms/deactivate_room/'+ elem.room.details._id, {} )
+                      .subscribe(data => {
+                        console.log(data);
+                this.getAllRooms(loader);
+
+
+                      });
+   } );
+
+
+    });
+
   }
 
 
-
+   // view did load
   ionViewDidLoad() {
-      this.jobs.get_rooms()
-                                  .subscribe(res => {
-                                 this.rooms  = res['data'];
-                                 this.count = res['count']
-                                 console.log(this.rooms);
-                                 console.log(this.count);
+    const loader =  this.loading.create({
+      content:'please wait'
+    });
+    loader.present();
+    this.getAllRooms(loader);
 
-                                  });
 
 }
 
